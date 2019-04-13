@@ -22,9 +22,12 @@
     "generate": "nuxt generate"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.1",
     "@nuxt/typescript": "^2.6.1",
     "@nuxt/vue-app": "^2.6.1",
     "@types/node": "10.14.4",
-    "@types/webpack-env": "1.13.9"
+    "@types/webpack-env": "1.13.9",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0"
   }
 }

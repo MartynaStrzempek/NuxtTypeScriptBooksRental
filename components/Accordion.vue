@@ -1,12 +1,20 @@
 <template>
     <b-card no-body class="mb-1" @click="toggleAccordion">
         <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button :id="setButtonId()" block href="#" variant="info">{{ book.title }} {{ activeIndex }}</b-button>
+            <b-button :id="setButtonId()" block href="#" variant="info">{{ book.title }}</b-button>
         </b-card-header>
         <b-collapse :id="setCollapseId()" :visible="visibility" accordion="my-accordion" role="tabpanel">
             <b-card-body>
-                <b-card-text>I start opened because <code>visible</code> is <code>true</code></b-card-text>
-                <b-card-text>{{ book.description }}</b-card-text>
+                <b-card-text class="details">
+                    <p class="title">Description:</p>
+                    <p class="text">{{ book.description }}</p>
+                    <hr>
+                    <p class="title">Rate:</p>
+                    <p class="text">*</p>
+                    <hr>
+                    <p class="title" v-if="true">Available to:</p>
+                    <p class="title" v-else>Rented to:</p>
+                </b-card-text>
             </b-card-body>
         </b-collapse>
     </b-card>
@@ -19,11 +27,11 @@ import { Book } from "types";
 @Component
 export default class Accordion extends Vue {
   visibility: boolean = false;
-  
+
   @Prop() book: Book
   @Prop() idx: number
 
-  toggleAccordion() {
+  toggleAccordion(): void {
     this.visibility = !this.visibility
   }
   setButtonId(): string {
@@ -37,3 +45,15 @@ export default class Accordion extends Vue {
   }
 }
 </script>
+
+<style scoped lang="scss">
+.details {
+    .title {
+        font-size: 110%;
+        font-weight: bold; 
+    }
+    .text {
+        font-size: 90%;
+    }
+}
+</style>
