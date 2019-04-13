@@ -4,9 +4,7 @@
       v-for="(book, idx) in getBooks" 
       :key="idx" 
       :book="book"
-      :idx="idx"
-      :active-index="activeIndex"
-      @click="toggleAccordion(idx)" />
+      :idx="idx" />
   </div>
 </template>
 
@@ -21,14 +19,7 @@ import { Book } from "types";
   }
 })
 export default class BookList extends Vue {
-  activeIndex: number = null;
-
   @Getter getBooks: Array<Book>
-
-  toggleAccordion(idx) {
-    console.log("toggle", idx)
-    this.activeIndex = idx;
-  }
 }
 </script>
 
