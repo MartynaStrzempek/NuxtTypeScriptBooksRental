@@ -1,13 +1,16 @@
 <template>
     <b-card no-body class="mb-1" @click="toggleAccordion">
         <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button :id="setButtonId()" block href="#" variant="info">{{ book.title }}</b-button>
+            <b-button :id="setButtonId()" block href="#" variant="info">{{ book.book.title }}</b-button>
         </b-card-header>
         <b-collapse :id="setCollapseId()" :visible="visibility" accordion="my-accordion" role="tabpanel">
             <b-card-body>
                 <b-card-text class="details">
+                    <p class="title">Amount:</p>
+                    <p class="text">{{ book.amount }}</p>
+                    <hr>
                     <p class="title">Description:</p>
-                    <p class="text">{{ book.description }}</p>
+                    <p class="text">{{ book.book.description }}</p>
                     <hr>
                     <p class="title">Rate:</p>
                     <p class="text">*</p>
@@ -22,13 +25,13 @@
 
 <script lang="ts">
 import { Vue, Component, Prop, Emit } from "nuxt-property-decorator";
-import { Book } from "types";
+import { UniqueBook } from "types";
 
 @Component
 export default class Accordion extends Vue {
   visibility: boolean = false;
 
-  @Prop() book: Book
+  @Prop() book: UniqueBook
   @Prop() idx: number
 
   toggleAccordion(): void {

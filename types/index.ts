@@ -25,3 +25,9 @@ export interface Rate {
   bookId: string,
   rate: string
 }
+
+export interface UniqueBook {
+  book: Book,
+  amount: number
+}
+
