@@ -19,5 +19,6 @@ export default {
     "@nuxtjs/axios",
     "bootstrap-vue/nuxt"
   ],
+  plugins: ["~/plugins/initStore"],
   axios: {}
 }
