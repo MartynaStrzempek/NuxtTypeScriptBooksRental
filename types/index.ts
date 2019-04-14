@@ -12,13 +12,9 @@ export interface Book {
 }
 
 export interface Borrowing {
-  bookId: string,
-  rentals: Array<Rental>
-}
-
-export interface Rental {
-  dateOfRental: Date,
-  user: string
+  dateFrom: Date,
+  dateTo: Date,
+  user: Book["user"]
 }
 
 export interface Rate {
@@ -26,8 +22,10 @@ export interface Rate {
   rate: string
 }
 
-export interface UniqueBook {
-  book: Book,
-  amount: number
+export type BooksDict = {
+  [title in string]: Array<Book>
 }
 
+export type BooksBorrowingDict = {
+  [id in Book["id"]]: Array<Borrowing>
+}

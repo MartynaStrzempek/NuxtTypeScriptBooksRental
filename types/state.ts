@@ -1,9 +1,9 @@
-import { Book, Borrowing, Rate } from "~/types";
+import { Book, BooksBorrowingDict, Rate } from "~/types";
 import { GetterTree, ActionTree, MutationTree } from "vuex";
 
 export interface BooksState {
   books: Array<Book>,
-  booksBorrowing: Array<Borrowing>,
+  booksBorrowing: BooksBorrowingDict,
   booksRates: Array<Rate>
 }
 

@@ -1,22 +1,21 @@
 <template>
     <b-card no-body class="mb-1" @click="toggleAccordion">
         <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button :id="setButtonId()" block href="#" variant="info">{{ book.book.title }}</b-button>
+            <b-button :id="setButtonId()" block href="#" variant="info">{{ bookTitle }}</b-button>
         </b-card-header>
         <b-collapse :id="setCollapseId()" :visible="visibility" accordion="my-accordion" role="tabpanel">
             <b-card-body>
                 <b-card-text class="details">
                     <p class="title">Amount:</p>
-                    <p class="text">{{ book.amount }}</p>
+                    <p class="text">{{ bookAmount }}</p>
                     <hr>
                     <p class="title">Description:</p>
-                    <p class="text">{{ book.book.description }}</p>
+                    <p class="text">{{ bookDescription }}</p>
                     <hr>
                     <p class="title">Rate:</p>
                     <p class="text">*</p>
                     <hr>
-                    <p class="title" v-if="true">Available to:</p>
-                    <p class="title" v-else>Rented to:</p>
+                    <borrowings :book-copies="bookCopies" />
                 </b-card-text>
             </b-card-body>
         </b-collapse>
@@ -25,14 +24,32 @@
 
 <script lang="ts">
 import { Vue, Component, Prop, Emit } from "nuxt-property-decorator";
-import { UniqueBook } from "types";
+import { Book } from "types";
+import Borrowings from "~/components/Borrowings.vue";
 
-@Component
+@Component({
+    components: {
+        Borrowings
+    }
+})
 export default class Accordion extends Vue {
   visibility: boolean = false;
 
-  @Prop() book: UniqueBook
+  @Prop() book: [string, Array<Book>]
   @Prop() idx: number
+
+  get bookTitle(): string {
+      return this.book[0];
+  }
+  get bookAmount(): number {
+      return this.book[1].length;
+  }
+  get bookDescription(): string {
+      return this.book[1][0].description;
+  }
+  get bookCopies(): Array<Book> {
+      return this.book[1];
+  }
 
   toggleAccordion(): void {
     this.visibility = !this.visibility

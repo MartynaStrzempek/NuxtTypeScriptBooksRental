@@ -1,14 +1,13 @@
 <template>
   <section>
-    <button @click="getBooks">Get Books</button>
     <book-list />
   </section>
 </template>
 
 <script lang="ts">
 import { Action, Component, Vue } from "nuxt-property-decorator"
-// import { State } from "vuex-class"
 import BookList from "~/components/BookList.vue";
+import axios from "axios";
 
 @Component({
   components: {
