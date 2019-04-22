@@ -1,5 +1,5 @@
 <template>
-    <button @click.stop="borrowBook()">Borrow {{bookCopyId}}</button>
+    <button @click="borrowBook()">Borrow {{bookCopyId}}</button>
 </template>
 
 <script lang="ts">

@@ -1,7 +1,7 @@
 <template>
-    <b-card no-body class="mb-1" @click="toggleAccordion">
+    <b-card no-body class="mb-1">
         <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button :id="setButtonId()" block href="#" variant="info">{{ bookTitle }}</b-button>
+            <b-button :id="setButtonId()" block href="#" variant="info" @click="toggleAccordion">{{ bookTitle }}</b-button>
         </b-card-header>
         <b-collapse :id="setCollapseId()" :visible="visibility" accordion="my-accordion" role="tabpanel">
             <b-card-body>

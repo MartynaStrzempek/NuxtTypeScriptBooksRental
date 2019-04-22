@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@nuxtjs/axios": "5.4.1",
+    "@types/jquery": "^3.3.29",
     "axios": "^0.18.0",
     "bootstrap-vue": "^2.0.0-rc.18",
     "nuxt": "2.6.1",
