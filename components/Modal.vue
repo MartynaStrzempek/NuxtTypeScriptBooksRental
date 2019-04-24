@@ -51,6 +51,7 @@ export default class Modal extends Vue {
 
     hideModal(): void {
         document.getElementById(`modal-${this.bookCopyId}`).style.display = "none";
+        this.isReservationListVisible = false;
     }
     borrowBook(): void {
         const { user, bookCopyId, dateFrom, dateTo } = this;
