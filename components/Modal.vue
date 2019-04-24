@@ -11,30 +11,43 @@
                 <date-input :date.sync="dateTo" class="date-input"/>
             </span>
             <span class="buttons">
-                <b-button @click="hideModal" class="button">Close</b-button>
-                <b-button @click="borrowBook" class="button">Borrow</b-button>
+                <span>
+                    <b-button @click="isReservationListVisible = !isReservationListVisible">Show reservations</b-button>
+                </span>
+                <span>
+                    <b-button variant="danger" @click="hideModal" class="button">Close</b-button>
+                    <b-button @click="borrowBook" class="button">Borrow</b-button>
+                </span>
             </span>
+            <reservation-list v-if="isReservationListVisible" :reservation-list="bookBorrowing" />
         </div>
     </div> 
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "nuxt-property-decorator"
+import { Component, Vue, Prop, Getter } from "nuxt-property-decorator"
 import DateInput from "~/components/DateInput.vue";
-import { Book } from "~/types";
+import ReservationList from "~/components/ReservationList.vue";
+import { Book, Borrowing } from "~/types";
 import * as MUTATIONS from "~/store/mutationTypes";
 
 @Component({
     components: {
-        DateInput
+        DateInput,
+        ReservationList
     }
 })
 export default class Modal extends Vue {
     user: number = 3;
     dateFrom: string = "";
     dateTo: string = "";
+    isReservationListVisible: boolean = false;
 
     @Prop() bookCopyId: Book["id"];
+
+    get bookBorrowing(): Array<Borrowing> {
+        return this.$store.getters["getTargetBookBorrowing"](this.bookCopyId);
+    };
 
     hideModal(): void {
         document.getElementById(`modal-${this.bookCopyId}`).style.display = "none";
@@ -78,7 +91,8 @@ export default class Modal extends Vue {
             }
         }
         .buttons {
-            float: right;
+            display: flex;
+            justify-content: space-between;
             margin: 0 40px;
             .button {
                 margin-left: 20px;

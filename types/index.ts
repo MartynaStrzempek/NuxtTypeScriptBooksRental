@@ -12,8 +12,8 @@ export interface Book {
 }
 
 export interface Borrowing {
-  dateFrom: Date,
-  dateTo: Date,
+  dateFrom: String,
+  dateTo: String,
   user: Book["user"]
 }
 

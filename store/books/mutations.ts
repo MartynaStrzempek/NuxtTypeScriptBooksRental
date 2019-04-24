@@ -9,7 +9,6 @@ export default<MutationTree<BooksState>> {
     state.booksBorrowing[bookCopyId] 
       ? state.booksBorrowing[bookCopyId].push({ dateFrom, dateTo, user }) 
       : state.booksBorrowing[bookCopyId] = [{ dateFrom, dateTo, user }]
-
     // state.booksBorrowing = {};
   }
 }

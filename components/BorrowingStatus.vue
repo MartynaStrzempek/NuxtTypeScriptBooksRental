@@ -1,9 +1,13 @@
 <template>
     <div>
-        <span>Copy {{ id + 1 }}:</span> 
-        <!-- <span v-if="isAvailable" class="available">Available to: {{ firstBorrowingDate ? firstBorrowingDate.dateFrom.slice(0, 10) : "no reservations"}}</span>  -->
-        <!-- <span v-else class="rented">Rented to: {{ firstBorrowingDate.dateTo.slice(0, 10) }}</span> -->
-        <borrow-button :book-copy-id="bookCopyId" @borrowBook="borrowBook" />
+        <span class="wrapper">
+            <span>
+                <span>Copy {{ id + 1 }}:</span> 
+                <span v-if="isAvailable" class="available">Available</span> 
+                <span v-else class="rented">Rented</span>
+            </span>
+            <borrow-button :book-copy-id="bookCopyId" @borrowBook="borrowBook" />
+        </span>
         <!-- todo: generate only one modal in DOM -->
         <modal :book-copy-id="bookCopyId" />
     </div>
@@ -30,39 +34,40 @@ export default class BorrowingStatus extends Vue {
     @Prop() id: number;
     @Prop() bookCopyId: Book["id"];
 
+    get presentDate(): string {
+        return new Date().toISOString().slice(0, 10);
+    }
     get bookBorrowing(): Array<Borrowing> {
         return this.$store.getters["getTargetBookBorrowing"](this.bookCopyId);
     }
-    // get firstBorrowingDate(): { dateFrom: Date, dateTo: Date } | null {
-        // const dateFrom = this.bookBorrowing ? this.bookBorrowing.map(borrowing => borrowing.dateFrom).sort()[0] : null;
-        // const dateTo = this.bookBorrowing ? this.bookBorrowing.find(borrowing => borrowing.dateFrom === dateFrom).dateTo : null;
-        // return dateFrom ? { dateFrom, dateTo } : null;
-    // }
-    // get isAvailable(): boolean {
-    //     if (this.firstBorrowingDate) {
-    //         return new Date() < new Date(this.firstBorrowingDate.dateFrom)
-    //     } else {
-    //         return true;
-    //     }
-    // }
+    get isAvailable(): boolean {
+        return this.bookBorrowing
+            ? !this.bookBorrowing.some(date => this.presentDate >= date.dateFrom && this.presentDate <= date.dateTo)
+            : true;
+    }
 
     borrowBook(bookCopyId): void {
         document.getElementById(`modal-${this.bookCopyId}`).style.display = "block";
     }
 
     mounted(){
-        // console.log(this.bookBorrowing, this.bookCopyId);
+        this.bookBorrowing.map(el => console.log(el.dateFrom, " - ", el.dateTo, " - ", this.bookCopyId))
     }
 }
 </script>
 
 <style scoped lang="scss">
-.available {
-    color: green;
-    font-weight: bold;
-}
-.rented {
-    color: red;
-    font-weight: bold;
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    .available {
+        color: green;
+        font-weight: bold;
+    }
+    .rented {
+        color: red;
+        font-weight: bold;
+    }
 }
 </style>
