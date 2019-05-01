@@ -15,7 +15,7 @@ import axios from "axios";
   }
 })
 export default class extends Vue {
-  @Action getBooks
+  @Action getBooks: void
 }
 </script>
 

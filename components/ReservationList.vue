@@ -14,7 +14,7 @@ import { Borrowing } from "~/types";
 
 @Component
 export default class ReservationList extends Vue {
-    @Prop() reservationList: Array<Borrowing>
+    @Prop() reservationList: Array<Borrowing>;
 }
 </script>
 

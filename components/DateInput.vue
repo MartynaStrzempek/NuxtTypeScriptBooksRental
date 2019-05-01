@@ -9,7 +9,7 @@ import { Component, Vue, Emit, Prop } from "nuxt-property-decorator";
 export default class DateInput extends Vue {
   @Prop() date: string;
 
-  @Emit("update:date") onDateInputChange(date) {
+  @Emit("update:date") onDateInputChange(date: string): string {
     return date;
   }
 }

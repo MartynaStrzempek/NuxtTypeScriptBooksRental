@@ -35,8 +35,8 @@ import Borrowings from "~/components/Borrowings.vue";
 export default class Accordion extends Vue {
   visibility: boolean = false;
 
-  @Prop() book: [string, Array<Book>]
-  @Prop() idx: number
+  @Prop() book: [string, Array<Book>];
+  @Prop() idx: number;
 
   get bookTitle(): string {
       return this.book[0];
@@ -61,7 +61,8 @@ export default class Accordion extends Vue {
     return `accordion-${this.idx + 1}`;
   }
   mounted() {
-    document.getElementById(`b-button-${this.idx + 1}`).setAttribute(`v-b-toggle.accordion-${this.idx + 1}`, "");
+    const targetButtonAccordion = document.getElementById(`b-button-${this.idx + 1}`);
+    if (targetButtonAccordion) targetButtonAccordion.setAttribute(`v-b-toggle.accordion-${this.idx + 1}`, "");
   }
 }
 </script>

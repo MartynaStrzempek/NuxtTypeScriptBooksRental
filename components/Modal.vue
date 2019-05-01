@@ -12,16 +12,16 @@
             </span>
             <span class="buttons">
                 <span>
-                    <b-button @click="isReservationListVisible = !isReservationListVisible">Show reservations</b-button>
+                    <b-button v-if="" @click="isReservationListVisible = !isReservationListVisible">Show reservations</b-button>
                 </span>
                 <span>
                     <b-button variant="danger" @click="hideModal" class="button">Close</b-button>
                     <b-button @click="borrowBook" class="button">Borrow</b-button>
                 </span>
             </span>
-            <reservation-list v-if="isReservationListVisible" :reservation-list="bookBorrowing" />
+            <reservation-list v-if="isReservationListVisible" :reservation-list="presentAndFutureReservations" />
         </div>
-    </div> 
+    </div>
 </template>
 
 <script lang="ts">
@@ -45,17 +45,26 @@ export default class Modal extends Vue {
 
     @Prop() bookCopyId: Book["id"];
 
+    get presentDate(): string {
+        return new Date().toISOString().slice(0, 10);
+    }
     get bookBorrowing(): Array<Borrowing> {
         return this.$store.getters["getTargetBookBorrowing"](this.bookCopyId);
     };
+    get presentAndFutureReservations(): Array<Borrowing> {
+        return this.bookBorrowing.filter(reservation => {
+          return !(this.presentDate > reservation.dateFrom && this.presentDate > reservation.dateTo)
+        })
+    }
 
     hideModal(): void {
-        document.getElementById(`modal-${this.bookCopyId}`).style.display = "none";
-        this.isReservationListVisible = false;
+      const targetModal = document.getElementById(`modal-${this.bookCopyId}`);
+      if (targetModal) targetModal.style.display = "none";
+      this.isReservationListVisible = false;
     }
     borrowBook(): void {
         const { user, bookCopyId, dateFrom, dateTo } = this;
-        this.$store.commit(MUTATIONS.BORROW_BOOK, { dateFrom, dateTo, user, bookCopyId })
+        this.$store.commit(MUTATIONS.BORROW_BOOK, { dateFrom, dateTo, user, bookCopyId });
         this.hideModal();
     }
 }

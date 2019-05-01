@@ -19,7 +19,6 @@ import { Book, Borrowing } from "~/types";
 import BorrowButton from "~/components/BorrowButton.vue";
 import DateInput from "~/components/DateInput.vue";
 import Modal from "~/components/Modal.vue";
-import * as MUTATIONS from "~/store/mutationTypes";
 
 @Component({
     components: {
@@ -29,8 +28,6 @@ import * as MUTATIONS from "~/store/mutationTypes";
     }
 })
 export default class BorrowingStatus extends Vue {
-    user: Book["user"] = "3";
-
     @Prop() id: number;
     @Prop() bookCopyId: Book["id"];
 
@@ -46,12 +43,9 @@ export default class BorrowingStatus extends Vue {
             : true;
     }
 
-    borrowBook(bookCopyId): void {
-        document.getElementById(`modal-${this.bookCopyId}`).style.display = "block";
-    }
-
-    mounted(){
-        this.bookBorrowing.map(el => console.log(el.dateFrom, " - ", el.dateTo, " - ", this.bookCopyId))
+    borrowBook(): void {
+      const targetModal = document.getElementById(`modal-${this.bookCopyId}`);
+      if (targetModal) targetModal.style.display = "block";
     }
 }
 </script>
