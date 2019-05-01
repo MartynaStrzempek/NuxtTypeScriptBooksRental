@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f5d3fb30-2f3f-4ee5-a131-238c27873a9a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/sortByDate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/API/sortByDate.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Accordion.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Accordion.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/BorrowingStatus.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/BorrowingStatus.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/DateInput.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/DateInput.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Modal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Modal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ReservationList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ReservationList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/books/getters.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/books/getters.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,13 +29,13 @@
         <counts>
           <entry key="json" value="2" />
           <entry key="ts" value="166" />
-          <entry key="vue" value="420" />
+          <entry key="vue" value="1203" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="TypeScript" value="166" />
-          <entry key="Vue.js" value="420" />
+          <entry key="Vue.js" value="1203" />
           <entry key="tsconfig" value="2" />
         </counts>
       </usages-collector>
@@ -73,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/BorrowingStatus.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-18">
-              <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+            <state relative-caret-position="255">
+              <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
               <folding>
                 <element signature="e#515#586#0" expanded="true" />
               </folding>
@@ -85,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/DateInput.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="17">
+              <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -94,7 +86,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
+            <state relative-caret-position="374">
               <caret line="24" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
@@ -151,8 +143,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/Modal.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="47" column="3" selection-start-line="47" selection-start-column="3" selection-end-line="47" selection-end-column="3" />
+            <state relative-caret-position="410">
+              <caret line="78" column="18" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
+              <folding>
+                <element signature="n#span#0;n#span#2;n#div#0;n#div#0;n#template#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -174,12 +169,12 @@
         <option value="$PROJECT_DIR$/API/sortByDate.ts" />
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/components/Accordion.vue" />
-        <option value="$PROJECT_DIR$/components/DateInput.vue" />
         <option value="$PROJECT_DIR$/pages/index.vue" />
         <option value="$PROJECT_DIR$/store/books/getters.ts" />
         <option value="$PROJECT_DIR$/plugins/initStore.ts" />
         <option value="$PROJECT_DIR$/components/ReservationList.vue" />
         <option value="$PROJECT_DIR$/components/BorrowingStatus.vue" />
+        <option value="$PROJECT_DIR$/components/DateInput.vue" />
         <option value="$PROJECT_DIR$/components/Modal.vue" />
       </list>
     </option>
@@ -294,12 +289,12 @@
       <workItem from="1555176887177" duration="61000" />
       <workItem from="1556220099614" duration="6028000" />
       <workItem from="1556256379232" duration="13000" />
-      <workItem from="1556706488475" duration="1918000" />
+      <workItem from="1556706488475" duration="4548000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8020000" />
+    <option name="totallyTimeSpent" value="10650000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -314,7 +309,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13277134" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13277134" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -325,7 +320,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3290461" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3290461" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.08252948" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
@@ -376,13 +371,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plugins/initStore.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -407,27 +395,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/DateInput.vue">
+    <entry file="file://$PROJECT_DIR$/pages/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="374">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/BorrowingStatus.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
-          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+        <state relative-caret-position="255">
+          <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
           <folding>
             <element signature="e#515#586#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/components/DateInput.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/components/Modal.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="47" column="3" selection-start-line="47" selection-start-column="3" selection-end-line="47" selection-end-column="3" />
+        <state relative-caret-position="410">
+          <caret line="78" column="18" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
+          <folding>
+            <element signature="n#span#0;n#span#2;n#div#0;n#div#0;n#template#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
